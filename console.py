@@ -35,7 +35,10 @@ class HBNBCommand(cmd.Cmd):
                 list_prm = prm.split("=")
                 p1 = list_prm[0]
                 p2 = list_prm[1]
-                p2 = p2.replace('"', "")
+                if "\"" in p2:
+                    p2 = p2.replace('"', "")
+                if "_" in p2:
+                    p2 = p2.replace("_", " ")
                 setattr(model, p1, p2)
                 i = i + 1
             storage.new(model)
