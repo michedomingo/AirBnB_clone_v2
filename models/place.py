@@ -1,10 +1,25 @@
 #!/usr/bin/python3
-""" Place Module for HBNB project """
+"""
+This module defines class Place that inherits from BaseModel
+"""
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """ A place to stay """
+    """
+    Initialize class Place with attributes
+        city_id: city
+        user_id: user's id
+        name: name
+        description: description
+        number_rooms: number of rooms
+        number_bathrooms: number of bathrooms
+        max_guest: maximum guest
+        price_by_night: price by night
+        latitude: latitude
+        longitude: longitud
+        amenity_ids: amentity id
+    """
     city_id = ""
     user_id = ""
     name = ""
