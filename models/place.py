@@ -3,7 +3,7 @@
 This module defines class Place that inherits from BaseModel
 """
 from models.base_model import BaseModel
-
+from sqlalchemy import Column, Integer, String
 
 class Place(BaseModel):
     """
