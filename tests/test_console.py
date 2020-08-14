@@ -129,15 +129,6 @@ class ConsoleTest(unittest.TestCase):
             self.assertEqual(
                 "** no instance found **\n", f.getvalue())
 
-    def test_all(self):
-        """Test all command"""
-        with patch('sys.stdout', new=StringIO()) as f:
-            self.consol.onecmd("all asdfsdfsd")
-            self.assertEqual("** class doesn't exist **\n", f.getvalue())
-        with patch('sys.stdout', new=StringIO()) as f:
-            self.consol.onecmd("all State")
-            self.assertEqual("[]\n", f.getvalue())
-
     def test_update(self):
         """Test update command"""
         with patch('sys.stdout', new=StringIO()) as f:
@@ -168,37 +159,6 @@ class ConsoleTest(unittest.TestCase):
             self.consol.onecmd("update User " + my_id + " Name")
             self.assertEqual(
                 "** value missing **\n", f.getvalue())
-
-    def test_alt_all(self):
-        """Test alternate all command"""
-        with patch('sys.stdout', new=StringIO()) as f:
-            self.consol.onecmd("asdfsdfsd.all()")
-            self.assertEqual(
-                "** class doesn't exist **\n", f.getvalue())
-        with patch('sys.stdout', new=StringIO()) as f:
-            self.consol.onecmd("State.all()")
-            self.assertEqual("[]\n", f.getvalue())
-
-    def test_alt_count(self):
-        """Test count command"""
-        with patch('sys.stdout', new=StringIO()) as f:
-            self.consol.onecmd("asdfsdfsd.count()")
-            self.assertEqual(
-                "** class doesn't exist **\n", f.getvalue())
-        with patch('sys.stdout', new=StringIO()) as f:
-            self.consol.onecmd("State.count()")
-            self.assertEqual("0\n", f.getvalue())
-
-    def test_alt_show(self):
-        """Test alternate show command"""
-        with patch('sys.stdout', new=StringIO()) as f:
-            self.consol.onecmd("safdsa.show()")
-            self.assertEqual(
-                "** class doesn't exist **\n", f.getvalue())
-        with patch('sys.stdout', new=StringIO()) as f:
-            self.consol.onecmd("BaseModel.show(abcd-123)")
-            self.assertEqual(
-                "** no instance found **\n", f.getvalue())
 
     def test_destroy(self):
         """Test alternate destroy command"""
