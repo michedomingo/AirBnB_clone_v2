@@ -2,7 +2,9 @@
 """
 This module defines class State that inherits from BaseModel
 """
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
+import models
+from os import getenv
 
 
 class State(BaseModel):
