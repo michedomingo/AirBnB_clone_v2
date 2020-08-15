@@ -2,11 +2,11 @@
 """
 This module defines class Place that inherits from BaseModel
 """
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
 from sqlalchemy import Column, Integer, String, ForeignKey, Float
 
 
-class Place(BaseModel):
+class Place(BaseModel, Base):
     """
     Initialize class Place with attributes
         city_id: city
